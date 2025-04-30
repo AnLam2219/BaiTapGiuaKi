@@ -52,7 +52,7 @@ if st.session_state.stop == True:
     FRAME_WINDOW.image(st.session_state.frame_stop, channels='BGR')
 
 svc = joblib.load('F:/HK2_N3/ThiGiacMay/BaiTapGiuaKi/pages/models/svc.pkl')
-mydict = ['An','ElonMusk','IvankaTrump', 'NhatBao'] #sửa đoạn code này theo danh danh sách folder image
+mydict = ['An','Huy','NhatBao', 'QuocTuan',"Thanh"] #sửa đoạn code này theo danh danh sách folder image
 
 def visualize(input, faces, fps, thickness=2):
     if faces[1] is not None:
