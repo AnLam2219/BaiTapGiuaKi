@@ -16,6 +16,7 @@ image1 = image("Logoute.png")
 image2 = image("LogoFME.jpg")  
 image3 = image("TGM.jpg")
 image4 = image("TMG.png")
+image5 = image("MGT.jpg")
 # Logo Trường
 st.markdown(f"""
     <div style="text-align: center; margin-top: 20px;">   
@@ -33,17 +34,20 @@ st.markdown(f"""
         <h4 style="color: ##2e3090; font-size: 48px; font-weight: bold; text-transform: uppercase; padding-left: 60px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); margin-top: 20px;">
             Chào mừng các bạn đến với project Thị Giác Máy của nhóm mình
         </h4>
-        <h5 style="font-size: 22px; color: #66b3ff; font-style: italic;margin-top: 40px; font-weight: lighter; font-family: 'Arial', sans-serif;">
+        <h5 style="font-size: 22px; color: #66b3ff; font-style: italic;margin-top: 20px; font-weight: lighter; font-family: 'Arial', sans-serif;">
             Họ và tên: Lâm Phước An  <span style="margin-left: 20px;">  MSSV: 22146257
         </h5>
         <h6 style="font-size: 22px; color: #66b3ff; font-style: italic;margin-top: -10px; font-weight: lighter; font-family: 'Arial', sans-serif;">
             Họ và tên: Trần Quốc Tuấn <span style="margin-left: 20px;">  MSSV: 22146445
         </h6>
         <div style="text-align: right; margin-top: 20px">   
-        <img src="data:image/png;base64,{image3}" style="width: 400px;"/>
+        <img src="data:image/png;base64,{image3}" style="width: 280px;height: 250px;border-radius: 30px"/>
         </div>
-        <div style="text-align: left; margin-top: -220px">   
-        <img src="data:image/png;base64,{image4}" style="width: 300px;"/>
+        <div style="text-align: left; margin-top: -250px">   
+        <img src="data:image/png;base64,{image4}" style="width: 280px; height: 250px;border-radius: 30px"/>
+        </div>
+        <div style="text-align: center; margin-top: -250px">   
+        <img src="data:image/png;base64,{image5}" style="width: 280px; height: 250px;border-radius: 30px"/>
         </div>
        
 """, unsafe_allow_html=True)
