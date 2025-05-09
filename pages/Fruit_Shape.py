@@ -12,7 +12,7 @@ try:
         print("Loaded model")
 except:
     st.session_state["LoadModel"] = True
-    st.session_state["Net"] = YOLO("F:/HK2_N3/ThiGiacMay/BaiTapGiuaKi/pages/models/yolov8n_traicay.pt", task="detect")
+    st.session_state["Net"] = YOLO("C:\\Users\\Lenovo\\Downloads\\Thigiacmay\\tuan\\pages\\models\\yolov8n_traicay.pt", task="detect")
     print("First Load model")
 
 

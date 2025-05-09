@@ -12,11 +12,11 @@ def image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-image1 = image("Logoute.png")  
-image2 = image("LogoFME.jpg")  
-image3 = image("TGM.jpg")
-image4 = image("TMG.png")
-image5 = image("MGT.jpg")
+image1 = image("img/Logoute.png")  
+image2 = image("img/LogoFME.jpg")  
+image3 = image("img/TGM.jpg")
+image4 = image("img/TMG.png")
+image5 = image("img/MGT.jpg")
 # Logo Trường
 st.markdown(f"""
     <div style="text-align: center; margin-top: 20px;">   

@@ -86,6 +86,3 @@ if img_file_buffer is not None:
             cv2.putText(imgout, text, center, cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 1)
         st.image(imgout, caption="Predicted image", use_container_width=True)
         
-
-
-

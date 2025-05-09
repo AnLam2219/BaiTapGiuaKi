@@ -533,4 +533,3 @@ if img_file is not None:
                         if a[r] > max_value*0.5: #giữ lại các hạt gạo có kích thước lớn hơn 70%
                             imgout[x,y] = L-1 #thêm những hạt gạo đạt tiêu chuẩn 
             imgout_frame.image(imgout,use_container_width=True)    
-
