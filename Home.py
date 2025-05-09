@@ -6,7 +6,6 @@ st.set_page_config(
     page_icon="🎥",
 )
 
-
 # Chuyển ảnh sang base64
 def image(image_path):
     with open(image_path, "rb") as img_file:

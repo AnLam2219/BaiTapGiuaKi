@@ -103,7 +103,7 @@ def CreateMotionFilter(M,N):
             H.real[u,v] = RE
             H.imag[u,v] = IM
     return H
-# hàm bỏ qua bước mở trộng ảnh
+# hàm bỏ qua bước mở rộng ảnh
 def FrequencyFiltering(imgin, H):
     M,N = imgin.shape
     f = imgin.astype(np.float64)

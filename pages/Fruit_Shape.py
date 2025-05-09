@@ -14,20 +14,19 @@ except:
     st.session_state["LoadModel"] = True
     st.session_state["Net"] = YOLO("C:\\Users\\Lenovo\\Downloads\\Thigiacmay\\tuan\\pages\\models\\yolov8n_traicay.pt", task="detect")
     print("First Load model")
-
-
-img_file_buffer = st.file_uploader("Upload image for process", type=["bmp", "png", "jpg", "jpeg","tif"])
+col1, col2 = st.columns(2)
+img_file_buffer = st.sidebar.file_uploader("Upload image for process", type=["bmp", "png", "jpg", "jpeg","tif"])
 
 if img_file_buffer is not None:
     # Mở ảnh bằng PIL
     image = Image.open(img_file_buffer).convert("RGB")
-
-    # Hiển thị ảnh gốc
-    st.image(image, caption="Original image", use_container_width=True)
-
+    # Hiển thị ảnh gốc 
+    with col1:
+        st.image(image, caption="Original Image", width=350) 
+    #st.image(image, caption="Original image", use_container_width=True)
     # Chuyển sang NumPy để xử lý
     img_np = np.array(image)
-    if st.button("Predict"):
+    if st.sidebar.button("Predict"):
         img_bgr = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
         img_out = img_bgr.copy()
 
@@ -44,4 +43,11 @@ if img_file_buffer is not None:
             annotator.box_label(box, label=label, txt_color=(255,0,0), color=(255,255,255))
 
         img_result = cv2.cvtColor(img_out, cv2.COLOR_BGR2RGB)
-        st.image(img_result, caption="Predicted image", use_container_width=True)
+        #st.image(img_result, caption="Predicted image", use_container_width=True)
+          # Hiển thị ảnh trong 2 cột
+        
+        with col2:
+            if img_result is not None:
+                st.image(img_result, caption="Predicted Image", width=350)
+            else:
+                st.info("Click 'Predict' to see results.")
