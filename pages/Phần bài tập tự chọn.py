@@ -8,7 +8,7 @@ col1,col2 = st.columns(2)
 imgin_frame = col1.empty()
 imgout_frame = col2.empty()
 
-pytesseract.pytesseract.tesseract_cmd = r"c:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 font_path = "C:\\Windows\\Fonts\\arial.ttf"  # hoặc roboto.ttf, times.ttf...
 custom_config = r'--oem 1 --psm 6'
 font = ImageFont.truetype(font_path, size=18)
