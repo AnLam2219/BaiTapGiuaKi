@@ -13,7 +13,7 @@ imgout_frame = col2.empty()
 chapter = st.sidebar.selectbox("Chapter",["Chapter 3","Chapter 4","Chapter 9"])
 option = ""
 if chapter == "Chapter 3": 
-    option = st.sidebar.radio("----------------",("Image Negatives","Log Transformations","Power-Law Transformations","Piecewise Linear Transformation","Histogram","Histogram Equalization","Local Histogram Processing"))
+    option = st.sidebar.radio("----------------",("Image Negatives","Color image Negatives","Log Transformations","Power-Law Transformations","Piecewise Linear Transformation","Histogram","Histogram Equalization","Local Histogram Processing"))
 elif chapter == "Chapter 4":
     option = st.sidebar.radio("----------------",("Spectrum","Remove Moiré","Remove Interference","Create Motion","Demotion","Demotion Noise"))
 else:
@@ -173,6 +173,29 @@ if img_file is not None:
                     s = L - 1 - r
                     imgout[x,y] = np.uint8(s)
             # hiển thị kết quả bên cột 2
+            imgout_frame.image(imgout)
+    elif option == "Color image Negatives":
+        if process:
+            image = Image.open(img_file).convert("RGB")
+            imgin = np.array(image,dtype=np.uint8)
+            M,N,C = imgin.shape
+            imgout  = np.zeros((M,N,C),np.uint8)
+            # quét ảnh
+            for x in range(0,M):
+                for y in range(0,N):
+                    # ảnh màu của opencv là BGR
+                    # Ảhr màu màu pillow là RGB
+                    # Pillow là thư viện của python
+                    b = imgin[x,y,2]
+                    b = L - 1- b 
+                    g = imgin[x,y,1]
+                    g = L - 1- g 
+                    r = imgin[x,y,0]
+                    r = L - 1- r   
+
+                    imgout[x,y,2] = np.uint8(b)
+                    imgout[x,y,1] = np.uint8(g)
+                    imgout[x,y,0] = np.uint8(r)
             imgout_frame.image(imgout)
     elif option == "Log Transformations":
         # st.header("Log Transformations")
